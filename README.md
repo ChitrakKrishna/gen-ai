@@ -1,63 +1,66 @@
-# \# gen-ai
+# 📚 gen-ai
 
-# A Generative AI project using LangChain, Retrieval-Augmented Generation (RAG), and a custom chatbot powered by retrievers and MCP-based processing.
+A **Generative AI project** powered by **LangChain**, **Retrieval-Augmented Generation (RAG)**, and a custom chatbot that combines retrievers with MCP-based processing.
 
-# 📺 GenAI YouTube Script Generator : 
+---
 
-# This project is an AI-powered YouTube script generation assistant built using LangChain, HuggingFace embeddings, and Retrieval-Augmented Generation (RAG) with the ChatGroq LLM.
+## 🎬 GenAI YouTube Script Generator
 
+This tool is an AI-powered assistant that generates **YouTube video scripts** based on user-defined topics. It leverages the power of **LangChain**, **HuggingFace embeddings**, and **Groq's LLaMA 3.3-70B model** to create compelling video content in seconds.
 
-# 🚀 Features
+---
 
-# 🔍 RAG-based document understanding using PDFs and Chroma vector store
+## 🚀 Features
 
-# 🤖 Chat interface for entering YouTube topics
+- 🔍 **RAG-based document retrieval** using PDFs and Chroma vector store
+- 🤖 **Interactive chatbot interface** for entering YouTube topics
+- 🧠 **Automated generation** of:
+  - Video titles
+  - Content segments
+  - Complete scripts
+- 💾 **Saves the script** as a `.txt` file
+- 🌐 Uses `sentence-transformers` for embeddings and **Groq’s LLaMA-3** for high-quality outputs
 
-# 🧠 Automatic title, segment, and script generation for videos
+---
 
-# 💾 Saves the generated script to a .txt file
+## 🛠️ Tech Stack
 
-# 🌐 Uses sentence-transformers for embeddings and Groq's llama-3-70b for high-quality responses
+- **LangChain**
+- **HuggingFace Transformers** (`all-MiniLM-L6-v2`)
+- **Groq’s LLaMA 3.3-70B**
+- **Chroma Vector DB**
+- **Python 3.10+**
+- **dotenv** for API key and environment variable management
 
+---
 
-# 🛠️ Tech Stack
+## 🧩 Project Structure
 
-# >> LangChain
+```
+gen-ai/
+├── data/         # Folder containing input PDF documents
+├── db/           # Persistent ChromaDB vector store
+├── chain.py      # Main script for YouTube script generation
+├── rag.py        # Builds the retriever from PDFs using LangChain
+├── .env          # Stores environment variables like API keys
+```
 
-# >> HuggingFace Embeddings (all-MiniLM-L6-v2)
+---
 
-# >> Groq's LLaMA 3.3-70B model
+## 💡 How It Works
 
-# >> Chroma Vector DB
+1. **`rag.py`**:
+   - Loads PDFs from the `data/` folder
+   - Splits and embeds the text using HuggingFace
+   - Stores vectors in a Chroma DB
 
-# >> .env for secret management
+2. **`chain.py`**:
+   - Loads the retriever
+   - Defines a 3-step generation chain using LLMs:
+     1. Generate a **YouTube title** from the user topic
+     2. Generate 10 **content segments**
+     3. Generate a full **script** based on the segments
 
-# >> Python 3.10+
-
-
-# 🧩 Project Structure
-
-# 📁 data/                # Folder for input PDF documents
-
-# 📁 db/                  # ChromaDB storage folder
-
-# 📄 chain.py             # Main script for generating YouTube scripts
-
-# 📄 rag.py               # Builds retriever using PDF data
-
-# .env                    # Environment variables
-
-
-# 💡 How it Works
-
-# rag.py loads PDF data, splits and embeds it, and stores it in a Chroma vector database.
-
-# chain.py loads this retriever and defines a 3-step LLM chain:
-
-# 🔹 Generate a YouTube title from a topic
-
-# 🔹 Generate 10 content segments from the title
-
-# 🔹 Generate a detailed script from segments
-
-# 🔹 You interactively enter topics and receive full YouTube-ready scripts
+3. **User Interaction**:
+   - Enter any topic via the terminal
+   - The system generates and saves a detailed video script
