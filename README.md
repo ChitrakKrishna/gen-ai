@@ -60,4 +60,4 @@
 
 # 🔹 Generate a detailed script from segments
 
-# You interactively enter topics and receive full YouTube-ready scripts
+# 🔹 You interactively enter topics and receive full YouTube-ready scripts
