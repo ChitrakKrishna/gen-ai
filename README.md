@@ -61,6 +61,6 @@ gen-ai/
      2. Generate 10 **content segments**
      3. Generate a full **script** based on the segments
 
-3. **User Interaction**:
+3. **`User Interaction`**:
    - Enter any topic via the terminal
    - The system generates and saves a detailed video script
