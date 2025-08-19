@@ -100,3 +100,36 @@
 
 # You interactively enter topics and receive full YouTube-ready scripts.
 
+
+
+
+
+RBAC-Chatbot (Role-Based Access Control Chatbot)
+
+This project is a FastAPI-based chatbot with Role-Based Access Control (RBAC).
+It authenticates users via their email and employee ID, fetches their department, and then provides department-specific responses powered by LangChain and Groq LLMs.
+
+🚀 Features
+
+🔐 Role-Based Access Control (RBAC): Authenticate users via email & employee ID from HR data.
+
+💬 Chatbot: Department-specific Q&A with fallback to general responses.
+
+⚡ FastAPI Backend: Simple APIs for login and chat.
+
+🤖 LLM Integration: Uses Groq models with LangChain retrievers.
+
+🗂 Modular Retrievers: Supports multiple departments (HR, Finance, Marketing, Engineering, etc.).
+
+📂 Project Structure
+.
+├── admin.py          # Handles HR data authentication & department retrieval
+├── main.py           # FastAPI server with /login and /chat endpoints
+├── retrieval.py      # Chat logic, retrievers, LLM integration
+├── requirements.txt  # Python dependencies
+└── DS-RPC-01/
+    ├── data/hr/hr_data.csv   # HR employee dataset
+    └── metadata.txt          # Custom chatbot instructions
+
+
+
